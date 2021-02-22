@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "build": "react-scripts build",
-    "start": "start npm run startBack && start npm run startFront",
+    "start": "npm run startBack & npm run startFront",
     "startBack": "node server.js",
     "startFront": "react-scripts start",
     "test:backend": "cypress run --spec 'cypress/integration/backend.spec.js'",
