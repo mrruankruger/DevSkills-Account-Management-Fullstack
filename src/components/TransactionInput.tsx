@@ -27,7 +27,10 @@ export default class TransactionInput extends React.Component<Props, State> {
 
   async handleSubmit(event: any) {
     event.preventDefault();
+    this.formSubmit();
+  }
 
+  formSubmit = async () => {
     if (this.state.amount && this.state.accountID) {
       await api.postTransactrions(this.state.accountID, this.state.amount).then(async (res) => {
         if (res === 'Transaction created.') {
@@ -82,26 +85,7 @@ export default class TransactionInput extends React.Component<Props, State> {
           <div style={{ float: 'left' }}>
             <button onClick={async (e: any) => {
               e.preventDefault(); //prevents page refreshing after submit
-
-              if (this.state.amount && this.state.accountID) {
-                await api.postTransactrions(this.state.accountID, this.state.amount).then(async (res) => {
-                  if (res === 'Transaction created.') {
-                    await api.getBalance(this.state.accountID).then((bal) => {
-                      let currentTrx = {
-                        accountID: this.state.accountID,
-                        amount: this.state.amount,
-                        balance: bal.balance
-                      }
-                      //pass back results as object to be rendered
-                      this.props.OnPass(currentTrx)
-                      this.setState({ amount: '' })
-                      this.setState({ accountID: '' })
-                    })
-                  } else {
-                    this.setState({ error: res })
-                  }
-                });
-              }
+              this.formSubmit()
             }
             }>Submit</button>
 
