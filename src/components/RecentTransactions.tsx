@@ -37,8 +37,9 @@ export default class TransactionHistory extends React.Component<Props, State> {
               width: '50%',
               margin: 'auto',
               marginBottom: 15
-            }} datatype='transaction'>
-              <p><b>{item.amount > 0 ? 'Tranffered' : 'Withdrew'} ${item.amount > 0 ? item.amount : item.amount * -1}</b> from <b>{item.accountID}</b></p>
+            }} data-type="transaction">           
+              <p data-account-id={item.accountID} data-amount={item.amount} data-balance={item.balance}
+              ><b>{item.amount > 0 ? 'Tranffered' : 'Withdrew'} ${item.amount > 0 ? item.amount : item.amount * -1}</b> from <b>{item.accountID}</b></p>
               <p>Current <b>{item.accountID}</b>'s balance is $<b>{item.balance}</b></p>
             </div>
           })

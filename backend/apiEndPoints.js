@@ -131,6 +131,9 @@ app.get("/api/refresh", (req, res, next) => {
           db.run(insert, ["456", "55.55"])
           db.run(insert, [uuidv4(), "100"])
           db.run(insert, ["a40bcc03-6f39-418c-ad0b-97e14f522ec1", "0"])
+          db.run(insert, ["aaad2f95-aa52-4e04-a085-c5cc2a4d4ee4", "0"])
+          db.run(insert, ["6113255d-318f-4128-9e2a-a1c1b796a29e", "0"])
+          db.run(insert, ["0708c2b1-e1c9-4c31-8647-c2f44b7664e7", "0"])
           db.run(insert, ["0b230303-0156-45a9-b996-16574b6be525", "0"])
           db.run(insert, ["70ad2f95-aa52-4e04-a085-c5cc2a4d4ee4", "0"])
 
