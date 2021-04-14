@@ -1,14 +1,54 @@
 {
   "name": "account-management-fullstack-level-1",
   "version": "0.0.1",
+  "main": "server.js",
   "scripts": {
-    "build": "echo build your fullstack app here",
-    "start": "echo start your fullstack app here",
+    "build": "react-scripts build",
+    "start": "npm run startBack & npm run startFront",
+    "startBack": "node server.js",
+    "startFront": "react-scripts start",
     "test:backend": "cypress run --spec 'cypress/integration/backend.spec.js'",
     "test:frontend": "cypress run --spec 'cypress/integration/frontend.spec.js'",
     "test": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^5.4.0"
+    "cypress": "^5.4.0",
+    "express": "^4.17.1",
+    "md5": "^2.3.0",
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.20.3",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.2",
+    "typescript": "^4.1.5",
+    "web-vitals": "^1.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
